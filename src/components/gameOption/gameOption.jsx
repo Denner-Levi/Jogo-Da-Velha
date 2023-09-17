@@ -3,9 +3,9 @@ import Icon from '../icon/Icon'
 
 
 
-function GameOption ( { status } ) {
+function GameOption ( { status, onclick } ) {
     return(
-        <div className={Styles.gameoption}>
+        <div className={Styles.gameoption} onClick={onclick}>
             {
                 status === 1 && <Icon iconName="circle" size="25px" />
             }
