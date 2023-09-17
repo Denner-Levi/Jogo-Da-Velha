@@ -1,0 +1,43 @@
+.gameinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border: 2px solid red;
+    padding: 10px 10px;
+    border-radius: 5px;
+
+}
+.gameinfo2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border: 2px solid rgb(0, 255, 213);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.gameinfo3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border: 2px solid rgb(30, 255, 0);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

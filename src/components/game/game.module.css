@@ -8,25 +8,3 @@
     gap: 30px;
     align-items: center;
 }
-.gameinfo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-    border: 2px solid red;
-    padding: 10px 10px;
-    margin-bottom: 83px;
-    border-radius: 5px;
-}
-.gameinfo2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-    border: 2px solid rgb(0, 255, 213);
-    padding: 10px 10px;
-    margin-bottom: 83px;
-    border-radius: 5px;
-}

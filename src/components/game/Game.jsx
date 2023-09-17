@@ -1,7 +1,7 @@
 import Styles from "./game.module.css"
 import GameOption from "../gameOption/gameOption"
 import { useState, useEffect  } from "react"
-import Icon from "../icon/Icon";
+import GameInfo from "../gameinfo/gameinfo"
 
 
 const WinnerTable = [
@@ -16,7 +16,6 @@ const WinnerTable = [
 ]
 
 function Game () {
-    let varcss = "gameinfo";
     const [gameState, SetgameState] = useState(Array(9).fill(0));
     const [currentPlayer, SetCurrentPlayer] = useState(1)
     const [Winner, SetWinner] = useState(0)
@@ -29,9 +28,7 @@ function Game () {
             SetgameState(NewGameState)
         }
     }
-    if (currentPlayer === 1) {
-        varcss = 'gameinfo2';
-    }
+
 
     const verifyGame = () => {
         WinnerTable.forEach( (line) => {
@@ -48,6 +45,11 @@ function Game () {
         verifyGame()
     }, [gameState] )
 
+    const handleReset = () => {
+        SetgameState((Array(9).fill(0)))
+        SetWinner(0)
+    }
+
 
     return(
         <div className={Styles.gameContent}>
@@ -63,18 +65,11 @@ function Game () {
                 />)
             }
         </div>
-        <div className={Styles[varcss]}>
-            <h4>Próximo a jogar: </h4>
-
-            {currentPlayer === 1 ? (
-                <Icon iconName="circle" />
-            ) : currentPlayer === -1 ? (
-            <Icon iconName="x" />
-            ) : (
-            <span>Nenhuma ação definida</span>
-            )}
-        </div>
-
+            <GameInfo
+            currentPlayer={currentPlayer}
+            Winner = {Winner}
+            onReset={handleReset}
+            />
         </div>
 
     )
