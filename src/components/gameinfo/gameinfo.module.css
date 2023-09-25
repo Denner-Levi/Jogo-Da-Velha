@@ -7,6 +7,7 @@
     border: 2px solid red;
     padding: 10px 10px;
     border-radius: 5px;
+    min-width: 100px;
 
 }
 .gameinfo2{
@@ -18,6 +19,7 @@
     border: 2px solid rgb(0, 255, 213);
     padding: 10px 10px;
     border-radius: 5px;
+    min-width: 100px;
 }
 .gameinfo3{
     display: flex;
@@ -28,6 +30,7 @@
     border: 2px solid rgb(30, 255, 0);
     padding: 10px 10px;
     border-radius: 5px;
+    min-width: 117px;
 }
 .flex{
     display: flex;

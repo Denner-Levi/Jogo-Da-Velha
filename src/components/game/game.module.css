@@ -8,3 +8,9 @@
     gap: 30px;
     align-items: center;
 }
+
+@media (max-width: 400px){
+    .gameContent{
+        flex-direction: column;
+    }
+}
