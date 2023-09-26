@@ -3,7 +3,7 @@ import Styles from "./gameinfo.module.css"
 import Button from "../button/button";
 
 
-function GameInfo (  {currentPlayer, Winner, onReset}  ) {
+function GameInfo (  {currentPlayer, Winner, onReset, isDraw}  ) {
     let varcss = "gameinfo";
     if (currentPlayer === 1) varcss = 'gameinfo2';
     if (Winner !== 0) varcss = "gameinfo3";
@@ -14,7 +14,7 @@ function GameInfo (  {currentPlayer, Winner, onReset}  ) {
         
         <div className={Styles[varcss]}>
         {
-            Winner === 0 && 
+            !isDraw && Winner === 0 && 
             <>
             <h4>Próximo a jogar: </h4>
                 {currentPlayer === 1 ? (
@@ -27,7 +27,7 @@ function GameInfo (  {currentPlayer, Winner, onReset}  ) {
             </>
         }
         {
-            Winner !== 0 &&
+            !isDraw && Winner !== 0 &&
             <>
                 <h4>Fim! Campeão: </h4>
                 {Winner === 1 ? (
@@ -38,6 +38,9 @@ function GameInfo (  {currentPlayer, Winner, onReset}  ) {
                     <span>Nenhuma ação definida</span>
                 )}
             </>
+        }
+        {
+            isDraw && <h4>Empate!</h4>
         }
         </div>
 

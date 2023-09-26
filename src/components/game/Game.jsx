@@ -20,6 +20,7 @@ function Game () {
     const [currentPlayer, SetCurrentPlayer] = useState(1)
     const [Winner, SetWinner] = useState(0)
     const [WinnerLine, setWinnerLine] = useState([])
+    const [Draw, SetDraw] = useState(false)
 
 
     const handleCLick = (pos) => {
@@ -42,15 +43,28 @@ function Game () {
         } )
     }
 
+
+    useEffect(() => {
+        if (Winner !== 0) SetDraw(false)
+    }, [Winner])
+
+
+    const verifydraw = () => {
+        if (gameState.find((value) => value === 0) === undefined && Winner === 0)
+        SetDraw(true)
+    }
+
     useEffect( () => {
         SetCurrentPlayer(currentPlayer * -1)
         verifyGame()
+        verifydraw()
     }, [gameState] )
 
     const handleReset = () => {
         SetgameState((Array(9).fill(0)))
         SetWinner(0)
         setWinnerLine([])
+        SetDraw(false)
     }
 
     const verifyWinnerLine = (pos) => 
@@ -70,6 +84,7 @@ function Game () {
                 status={value}
                 onclick={() => handleCLick(pos)}
                 iswinner={verifyWinnerLine(pos)}
+                isDraw={Draw}
                 />)
             }
         </div>
@@ -77,6 +92,7 @@ function Game () {
             currentPlayer={currentPlayer}
             Winner = {Winner}
             onReset={handleReset}
+            isDraw={Draw}
             />
         </div>
 

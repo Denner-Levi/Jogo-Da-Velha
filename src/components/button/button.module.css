@@ -6,3 +6,6 @@
  background-color: #007bff;
  color: white;
 }
+.button:hover{
+    background-color: #0069da;
+}
